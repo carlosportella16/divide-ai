@@ -1,4 +1,4 @@
-# divisor-de-despesas
+# divide-ai
 
 Este projeto tem como objetivo implementar progressivamente uma aplicação web que efetuará o controle de despesas em comum de residência, sendo que o usuário poderá cadastrar a despesa que efetuou o pagamento (água, luz, supermercado, etc.), o valor da despesa, uma breve discriminação e a quantidade de moradores, sendo que ao final, a aplicação efetuará a soma e divisão, gerando o valor a ser pago por cada membro da residência.
 
@@ -7,6 +7,7 @@ O frontend da aplicação será desenvolvido com Angular e o backend simulado pe
 # Endereço de Deploy - GitHub Pages
 
 # Protótipo
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/bq4ZNSyDEdcDzWxoQawcXn/Divide-ai?node-id=0%3A1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 # Checklist
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
