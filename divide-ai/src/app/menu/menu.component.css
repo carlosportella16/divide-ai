@@ -1,0 +1,31 @@
+/*HEADER*/
+
+nav {
+  background-color: var(--nav-footer);
+}
+
+ul#menu a {
+    color: var(--primaryColor);
+    font-weight: 700;
+}
+
+a.brand-logo {
+padding: 10px;
+}
+
+#icon-menu{
+    color: var(--primaryColor);
+}
+ul.sidenav{
+    background-color: var(--primaryColor);
+}
+
+ul.sidenav li a{
+    color: var(--backgroundApp);
+}
+
+ul.sidenav {
+    top: 0;
+    padding: 20px;
+}
+

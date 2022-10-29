@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.css";
+@import "~material-icons/iconfont/material-icons.css";
+
+:root{
+    --primaryColor: #0A4378;
+    --secondaryColor: #1971C2;
+    --backgroundApp: #F0F9FF;
+    --nav-footer: rgb(184, 210, 247);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+  }
+
+html, body {
+    font-family: DM Sans;
+    background-color: var(--backgroundApp);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}

@@ -1,0 +1,45 @@
+/*main*/
+
+div .main h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  color: var(--secondaryColor);
+  padding-top: 60px;
+
+}
+
+div .main h1 {
+  font-size: 3.4rem;
+  line-height: 130%;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.form{
+padding: 30px;
+}
+
+.btn {
+background-color: var(--primaryColor);
+}
+
+.btn:hover {
+background-color: var(--secondaryColor);
+}
+
+.div-button a {
+  padding: 15px 40px 15px 40px;
+  color: var(--backgroundApp);
+  background-color: var(--primaryColor);
+  border-radius: 40px;
+}
+
+.div-button a:hover {
+  background-color: var(--secondaryColor);
+}
