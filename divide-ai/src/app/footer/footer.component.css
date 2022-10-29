@@ -1,0 +1,19 @@
+.footer-section {
+  background-color: var(--primaryColor);
+  margin-top: 30px !important;
+  padding-top: 50px;
+
+}
+
+.footer-copyright {
+  background-color: var(--secondaryColor);
+}
+
+footer img {
+  padding: 10px;
+}
+
+footer li {
+padding-top: 10px;
+}
+

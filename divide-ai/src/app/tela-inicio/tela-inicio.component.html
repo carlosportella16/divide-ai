@@ -1,1 +1,27 @@
-<p>tela-inicio works!</p>
+<div class="container body-content center">
+
+  <div class="main">
+    <h4>Seja bem Vindo!👋</h4>
+    <h1>Divida seus gastos de maneira descomplicada</h1>
+  </div>
+
+  <div class="form" [hidden]="this.hidePanel">
+    <div class="row">
+      <form class="col s12">
+        <div class="input-field col s12 offset">
+          <input placeholder="Valor" id="value" type="number">
+          <label for="value">Valor</label>
+
+          <div class="input-field col s12">
+            <input id="submit" type="submit" value="Enviar" class="btn">
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="div-button">
+    <a href="#Adicionardespesa" class="button"> Adicionar Despesa</a>
+  </div>
+</div>
