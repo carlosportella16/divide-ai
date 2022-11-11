@@ -1,0 +1,101 @@
+<div class="wrapper">
+  <div class="container center">
+    <h4>Cadastro de Despesas</h4>
+    <h6>Entre com os dados da despesa</h6>
+  </div>
+  <div class="col s12">
+    <div id="msg-login" class="card-panel white-text" [class.red]="!this.isSuccess" [class.blue]="this.isSuccess"
+      *ngIf="this.isShowMessage">
+      {{ this.message }}
+    </div>
+  </div>
+  <div class="row container">
+    <form class="col s12 center" #form="ngForm" (submit)="onSubmit()">
+      <div class="row">
+        <div class="input-field">
+          <input
+          id="amount"
+          class="validate"
+          type="text"
+          name="input-amount"
+          mask="separator.2"
+          [thousandSeparator]="'.'"
+          [decimalMarker]="','"
+          prefix="R$ "
+          [dropSpecialCharacters]="true"
+          [showMaskTyped]="false"
+          #valor="ngModel"
+          [(ngModel)]="this.despesa.valor"
+          required
+          />
+          <label for="amount">Valor Pago</label>
+          <div class="red-text" *ngIf="valor.errors?.['required'] && valor.touched">
+            Por favor, informe o valor da despesa.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field ">
+          <input
+          id="description"
+          name="input-description"
+          type="text"
+          class="validate"
+          #descricao="ngModel"
+          [(ngModel)]="this.despesa.descricao"
+          maxlength="40"
+          required
+          />
+          <label for="description">Descrição</label>
+          <div class="red-text" *ngIf="valor.errors?.['required'] && valor.touched">
+            Por favor, informe a descrição despesa.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input
+          id="date"
+          type="date"
+          class="validate"
+          #data="ngModel"
+          name="input-date"
+          [(ngModel)]="this.despesa.data"/>
+          <label for="date">Data</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <button
+          class="btn-enviar"
+          type="submit"
+          [disabled]="!form.valid"
+          >Adicionar Despesa</button>
+        </div>
+        <div class="col s6">
+          <button class="btn-lista" routerLink="/listaDespesas">Ver Lista Despesas</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container center">
+  <div class="table">
+    <table class="centered" *ngIf="despesas && despesas!.length > 0">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Data</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let d of despesas">
+          <td>{{ d.descricao | uppercase }}</td>
+          <td>{{d.data | date: "dd/MM/yyyy"}}</td>
+          <td>{{d.valor | currency: "BRL"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

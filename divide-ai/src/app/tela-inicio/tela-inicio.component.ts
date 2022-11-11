@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tela-inicio.component.css']
 })
 export class TelaInicioComponent implements OnInit {
-  hidePanel=true;
 
   constructor() {
 

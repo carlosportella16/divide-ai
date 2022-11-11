@@ -1,0 +1,94 @@
+table{
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-top: -8px;
+}
+
+thead  th {
+  font-weight: 700;
+  color: #384633;
+}
+
+td {
+  border: 1px solid var(--primaryColor);
+  border-left-width: 0;
+  background-color: var(--table);
+  border-radius: 0px;
+}
+
+td:first-child {
+  border-left-width: 1px;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  color: var(--secondaryColor);
+  margin-top: 60px;
+  padding: 10px 0px 10px 0px;
+}
+
+#input{
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#btnP {
+  margin: 10px;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+
+.input-people  {
+  background-color: var(--table) !important;
+  border: solid 1px var(--primaryColor) !important;
+  border-radius: 10px !important;
+  text-align: center !important;
+  margin-bottom: 0px !important;
+}
+
+/* label color */
+.input-field label {
+  color: var(--primaryColor);
+}
+/* label focus color */
+.input-field input:focus + label {
+  color: var(--primaryColor);
+}
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid var(--primaryColor);
+  box-shadow: 0 1px 0 0 var(--primaryColor);
+}
+/* valid color */
+.input-field input.valid {
+  border-bottom: 1px solid var(--primaryColor);
+  box-shadow: 0 1px 0 0 var(--primaryColor);
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: var(--primaryColor);
+}
+
+button {
+  margin-top: 40px;
+  padding: 15px 40px 15px 40px;
+  color: var(--backgroundApp);
+  background-color: var(--primaryColor);
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: var(--secondaryColor);
+  cursor: pointer;
+}
+
