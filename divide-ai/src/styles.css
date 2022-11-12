@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @import "~materialize-css/dist/css/materialize.css";
 @import "~material-icons/iconfont/material-icons.css";
 
@@ -7,6 +6,7 @@
     --secondaryColor: #1971C2;
     --backgroundApp: #F0F9FF;
     --nav-footer: #b8d2f7;
+
 }
 
 * {
@@ -33,4 +33,5 @@ body{
 
 main {
   flex: 1 0 auto;
+  margin-top: 20px;
 }

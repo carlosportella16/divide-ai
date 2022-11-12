@@ -6,31 +6,22 @@ div .main h4 {
   line-height: 150%;
   letter-spacing: 0.08rem;
   text-transform: uppercase;
-  margin-bottom: 1.6rem;
   color: var(--secondaryColor);
-  padding-top: 60px;
+  margin-top: 30px;
 
 }
 
 div .main h1 {
   font-size: 3.4rem;
   line-height: 130%;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 6rem;
   font-weight: 700;
   padding: 10px;
 }
 
-.form{
-padding: 30px;
-}
-
-.btn {
-background-color: var(--primaryColor);
-}
-
-.btn:hover {
-background-color: var(--secondaryColor);
+.div-button {
+  margin-bottom: 30px;
 }
 
 .div-button a {

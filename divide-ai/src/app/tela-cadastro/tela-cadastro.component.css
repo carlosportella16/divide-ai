@@ -1,0 +1,96 @@
+h4 {
+  font-size: 28px;
+  line-height: 130%;
+  font-weight: 700;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--secondaryColor);
+  margin-bottom: 30px;
+}
+input {
+  background-color: var(--table) !important;
+  border: solid 1px var(--primaryColor) !important;
+  border-radius: 10px !important;
+  text-align: center !important;
+}
+
+/* label color */
+.input-field label {
+  color: var(--primaryColor);
+  padding-left: 10px;
+}
+
+/* label color data */
+#date + label {
+  color: var(--primaryColor);
+  margin: -10px;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label,
+.input-field input[type=number]:focus + label  {
+  margin: -10px;
+  color: var(--primaryColor);
+}
+/* label focus data color*/
+.input-field input[type=date]:focus + label  {
+  color: var(--primaryColor);
+}
+
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid var(--primaryColor);
+  box-shadow: 0 1px 0 0 var(--primaryColor);
+}
+/* valid color */
+.input-field input.valid {
+  border-bottom: 1px solid var(--primaryColor);
+  box-shadow: 0 1px 0 0 var(--primaryColor);
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: var(--primaryColor);
+}
+
+.wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.btn-enviar {
+  padding: 15px 40px 15px 40px;
+  color: var(--backgroundApp);
+  background-color: var(--primaryColor);
+  border-radius: 40px;
+}
+
+.btn-enviar:disabled, .btn-enviar:disabled:hover{
+  background-color: var(--secondaryColor);
+  cursor: not-allowed;
+}
+
+.btn-enviar:hover {
+  background-color: var(--secondaryColor);
+  cursor: pointer;
+}
+
+.btn-lista {
+  padding: 15px 40px 15px 40px;
+  color: var(--backgroundApp);
+  background-color: var(--bnt-lista);
+  border-radius: 40px;
+}
+
+.btn-lista:hover{
+  background-color: red;
+  cursor: pointer;
+}
