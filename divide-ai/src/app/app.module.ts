@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
@@ -10,8 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
 import { TelaDespesasComponent } from './tela-despesas/tela-despesas.component';
 import { NgxMaskModule } from 'ngx-mask';
-import { ResultComponentComponent } from './result-component/result-component.component';
+import { ResultComponentComponent } from './tela-despesas/result-component/result-component.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,12 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     TelaCadastroComponent,
     TelaDespesasComponent,
-    ResultComponentComponent
+    ResultComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgxMaskModule.forRoot(),
     FormsModule,
   ],

@@ -16,6 +16,14 @@ td {
   border-radius: 0px;
 }
 
+.right {
+  float: none !important;
+}
+
+td a {
+  cursor: pointer;
+}
+
 td:first-child {
   border-left-width: 1px;
 }
