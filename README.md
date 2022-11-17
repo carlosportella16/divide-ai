@@ -22,8 +22,8 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 - [x] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
 - [x] Validar campos do formulário com REGEX e apresentar os erros.
 - [x] Desabilitar o botão de submit enquanto o formulário está inválido.
-- [ ] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
-- [ ] Cadastrar uma entidade usando uma API (JSON Server ou Firebase).
+- [x] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
+- [x] Cadastrar uma entidade usando uma API (JSON Server ou Firebase).
 - [ ] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [ ] Usar a diretiva ngIf
 - [ ] Formatar a apresentação de dados com Pipes.
