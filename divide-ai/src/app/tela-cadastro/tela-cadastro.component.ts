@@ -1,9 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Shared } from 'src/util/shared';
-import { Despesa } from '../model/despesa';
-import { DespesaStorageService } from './despesa-storage.service';
-
+import { Expense } from '../model/expense';
+import { ExpenseService } from '../services/expense.service';
+import { ExpenseStorageService } from './expense-storage.service';
 
 @Component({
   selector: 'app-tela-cadastro',
@@ -13,33 +17,44 @@ import { DespesaStorageService } from './despesa-storage.service';
 export class TelaCadastroComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
 
-  despesa!: Despesa;
-  despesas!: Despesa[];
+  expense!: Expense;
+  expenses!: Expense[];
 
   isSubmitted!: boolean;
   isShowMessage: boolean = false;
   isSuccess!: boolean;
   message!: string;
 
-  constructor(private despesaService: DespesaStorageService) {}
+  constructor(private expenseServiceStorage: ExpenseStorageService, private expenseService: ExpenseService) {}
 
   ngOnInit(): void {
     Shared.initializeWebStorage();
-    this.despesa = new Despesa('','');
-    this.despesas = this.despesaService.getDespesas();
+    this.expense = new Expense(0, '');
+    this.expenses = this.expenseServiceStorage.getExpenses();
   }
 
   onSubmit() {
-    this.isSubmitted = true;
-    this.despesaService.save(this.despesa);
-
-    this.isShowMessage = true;
-    this.isSuccess = true;
-    this.message = 'Cadastro realizado com sucesso!';
-
-    this.form.reset();
-    this.despesa = new Despesa('', '');
-
-    this.despesas = this.despesaService.getDespesas();
+    // Salva expense
+    this.expenseService
+      .save(this.expense)
+      .then(() => {
+        // Emite mensagem
+        this.isShowMessage = true;
+        this.isSuccess = true;
+        this.message = 'Cadastro realizado com sucesso!';
+        this.isSubmitted = true;
+        this.expenses = this.expenseServiceStorage.getExpenses();
+        this.expenseServiceStorage.notifyTotalExpenses();
+      })
+      .catch((e) => {
+        this.isShowMessage = true;
+        this.isSuccess = false;
+        this.message = e;
+      })
+      .then(() => {
+        // Reseta Formulario
+        this.form.reset();
+        this.expense = new Expense(0, '');
+      });
   }
 }

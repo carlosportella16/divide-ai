@@ -4,7 +4,7 @@ import { TelaAboutComponent } from './tela-about/tela-about.component';
 import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
 import { TelaDespesasComponent } from './tela-despesas/tela-despesas.component';
 import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
-import { ResultComponentComponent } from './result-component/result-component.component';
+import { ResultComponentComponent } from './tela-despesas/result-component/result-component.component';
 
 const routes: Routes = [
   {path: 'inicio', component: TelaInicioComponent},

@@ -66,19 +66,19 @@ input {
   padding-bottom: 30px;
 }
 
-.btn-enviar {
+.btn-submit {
   padding: 15px 40px 15px 40px;
   color: var(--backgroundApp);
   background-color: var(--primaryColor);
   border-radius: 40px;
 }
 
-.btn-enviar:disabled, .btn-enviar:disabled:hover{
+.btn-submit:disabled, .btn-submit:disabled:hover{
   background-color: var(--secondaryColor);
   cursor: not-allowed;
 }
 
-.btn-enviar:hover {
+.btn-submit:hover {
   background-color: var(--secondaryColor);
   cursor: pointer;
 }

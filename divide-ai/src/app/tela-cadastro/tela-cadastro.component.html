@@ -24,12 +24,12 @@
           prefix="R$ "
           [dropSpecialCharacters]="true"
           [showMaskTyped]="false"
-          #valor="ngModel"
-          [(ngModel)]="this.despesa.valor"
+          #cost="ngModel"
+          [(ngModel)]="this.expense.cost"
           required
           />
           <label for="amount">Valor Pago</label>
-          <div class="red-text" *ngIf="valor.errors?.['required'] && valor.touched">
+          <div class="red-text" *ngIf="cost.errors?.['required'] && cost.touched">
             Por favor, informe o valor da despesa.
           </div>
         </div>
@@ -41,13 +41,13 @@
           name="input-description"
           type="text"
           class="validate"
-          #descricao="ngModel"
-          [(ngModel)]="this.despesa.descricao"
+          #description="ngModel"
+          [(ngModel)]="this.expense.description"
           maxlength="40"
           required
           />
           <label for="description">Descrição</label>
-          <div class="red-text" *ngIf="valor.errors?.['required'] && valor.touched">
+          <div class="red-text" *ngIf="description.errors?.['required'] && description.touched">
             Por favor, informe a descrição despesa.
           </div>
         </div>
@@ -60,14 +60,14 @@
           class="validate"
           #data="ngModel"
           name="input-date"
-          [(ngModel)]="this.despesa.data"/>
+          [(ngModel)]="this.expense.date"/>
           <label for="date">Data</label>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
           <button
-          class="btn-enviar"
+          class="btn-submit"
           type="submit"
           [disabled]="!form.valid"
           >Adicionar Despesa</button>
@@ -79,23 +79,3 @@
     </form>
   </div>
 </div>
-<div class="container center">
-  <div class="table">
-    <table class="centered" *ngIf="despesas && despesas!.length > 0">
-      <thead>
-        <tr>
-          <th>Descrição</th>
-          <th>Data</th>
-          <th>Valor</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr *ngFor="let d of despesas">
-          <td>{{ d.descricao | uppercase }}</td>
-          <td>{{d.data | date: "dd/MM/yyyy"}}</td>
-          <td>{{d.valor | currency: "BRL"}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
