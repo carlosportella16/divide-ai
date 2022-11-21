@@ -19,20 +19,6 @@ export class SplitExpensesService {
     private httpClient: HttpClient){
   }
 
-  splitUp(people:number): Observable<number> {
-
-    if(people <= 1 || people === null) {
-      return throwError(
-        new AppError(
-          'O valor precisa ser maior que UM!'
-        )
-      );
-    }
-    this.total = this.localStorage.calculateTotalExpenses() / people;
-
-    return this.total;
-  }
-
   splitUpExpenses(people:number) {
     this.total = this.localStorage.calculateTotalExpenses() / people;
     return this.total;
