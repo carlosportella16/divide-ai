@@ -23,3 +23,16 @@ h4#sum-amount{
   padding: 10px;
   margin-bottom: 30px;
 }
+
+button {
+  color: var(--backgroundApp);
+  background-color: var(--bnt-lista);
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: var(--btn-lista-hover);
+  cursor: pointer;
+}

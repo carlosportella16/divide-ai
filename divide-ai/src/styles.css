@@ -1,20 +1,5 @@
 @import "~materialize-css/dist/css/materialize.css";
 @import "~material-icons/iconfont/material-icons.css";
-
-:root{
-    --primaryColor: #0A4378;
-    --secondaryColor: #1971C2;
-    --backgroundApp: #F0F9FF;
-    --nav-footer: #b8d2f7;
-<<<<<<< develop
-    --bnt-lista: #AD0C0C;
-    --btn-lista-hover: red;
-    --table: #D0EBFF;
-
-=======
->>>>>>> readme update and settings
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -22,6 +7,16 @@
     list-style: none;
     border: 0;
   }
+
+  :root{
+    --table: #D0EBFF;
+    --primaryColor: #0A4378;
+    --btn-lista-hover: red;
+    --secondaryColor: #1971C2;
+    --backgroundApp: #F0F9FF;
+    --bnt-lista: #AD0C0C;
+    --nav-footer: #b8d2f7;
+}
 
 html, body {
     font-family: DM Sans;

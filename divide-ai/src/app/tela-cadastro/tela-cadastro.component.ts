@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
 import { Shared } from 'src/util/shared';
 import { Expense } from '../model/expense';
 import { ExpenseService } from '../services/expense.service';
-import { ExpenseStorageService } from './expense-storage.service';
+import { ExpenseStorageService } from '../services/expense-storage.service';
 
 @Component({
   selector: 'app-tela-cadastro',
@@ -25,7 +25,9 @@ export class TelaCadastroComponent implements OnInit {
   isSuccess!: boolean;
   message!: string;
 
-  constructor(private expenseServiceStorage: ExpenseStorageService, private expenseService: ExpenseService) {}
+  constructor(
+    private expenseServiceStorage: ExpenseStorageService,
+    private expenseService: ExpenseService) {}
 
   ngOnInit(): void {
     Shared.initializeWebStorage();
@@ -44,7 +46,6 @@ export class TelaCadastroComponent implements OnInit {
         this.message = 'Cadastro realizado com sucesso!';
         this.isSubmitted = true;
         this.expenses = this.expenseServiceStorage.getExpenses();
-        this.expenseServiceStorage.notifyTotalExpenses();
       })
       .catch((e) => {
         this.isShowMessage = true;
@@ -55,6 +56,7 @@ export class TelaCadastroComponent implements OnInit {
         // Reseta Formulario
         this.form.reset();
         this.expense = new Expense(0, '');
+        this.expenseServiceStorage.notifyTotalExpenses();
       });
   }
 }
