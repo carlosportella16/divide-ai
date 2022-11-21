@@ -12,6 +12,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { ResultComponentComponent } from './tela-despesas/result-component/result-component.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TotalExpensesComponent } from './tela-despesas/total-expenses/total-expenses.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     TelaCadastroComponent,
     TelaDespesasComponent,
     ResultComponentComponent,
+    TotalExpensesComponent,
   ],
   imports: [
     BrowserModule,

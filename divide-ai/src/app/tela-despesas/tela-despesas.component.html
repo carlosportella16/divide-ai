@@ -7,6 +7,9 @@
   </div>
   <div class="table">
     <div class="table">
+      <!--
+          Utilizando NgIf:
+        -->
       <table class="centered" *ngIf="expenses && expenses!.length > 0">
         <thead>
           <tr>
@@ -16,7 +19,9 @@
             <th id="delete"></th>
           </tr>
         </thead>
-
+        <!--
+          Utilizando Pipes e  NgFor:
+        -->
         <tbody>
           <tr *ngFor="let e of expenses">
             <td>{{ e.description | uppercase }}</td>
@@ -35,26 +40,34 @@
           <h4>Total:</h4>
         </div>
         <div class="col s6">
-          <h4 id="sum-amount">{{this.totalExpenses | currency: "BRL"}}</h4>
+          <app-total-expenses></app-total-expenses>
         </div>
         <div class="row">
-          <div class="col s6">
-            <h4>Total dividido por:</h4>
-          </div>
-          <div class="col s6">
-            <div id="input" class="input-field">
-              <input name="people" class="input-people " type="number">
+          <form class="col s12" #formP="ngForm" (submit)="onSplitUp()">
+            <div class="col s6">
+              <h4>Total dividido por:</h4>
             </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              <div class="btn-dividir">
-                <button routerLink="/listaDespesas/resultado">$ Dividir $</button>
+            <div class="col s6">
+              <div id="input" class="input-field">
+                <input id="input-people" name="input-people" class="validate" type="number" [(ngModel)]="this.people"
+                  required />
+                <label for="input-people">N° de Pessoas</label>
               </div>
             </div>
-          </div>
+            <div class="row">
+              <div class="col s12">
+                <div class="btn-dividir">
+                  <button [disabled]="!formP.valid" class="btn-submit" type="submit" routerLink="/listaDespesas/resultado">$ Dividir $</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      <router-outlet></router-outlet>
+      <div class="container result">
+        <div class="row">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
   </div>

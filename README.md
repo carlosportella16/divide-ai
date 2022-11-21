@@ -24,7 +24,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 - [x] Desabilitar o botão de submit enquanto o formulário está inválido.
 - [x] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
 - [x] Cadastrar uma entidade usando uma API (JSON Server ou Firebase).
-- [ ] Apresentar uma lista de dados com a diretiva estrutural ngFor.
-- [ ] Usar a diretiva ngIf
-- [ ] Formatar a apresentação de dados com Pipes.
+- [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
+- [x] Usar a diretiva ngIf
+- [x] Formatar a apresentação de dados com Pipes.
 - [ ] Build e deploy da aplicação.

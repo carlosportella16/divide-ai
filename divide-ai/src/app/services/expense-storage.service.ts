@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Constants } from 'src/util/constants';
 import { WebStorageUtil } from 'src/util/web-storage-util';
 import { Expense } from '../model/expense';
@@ -47,5 +47,18 @@ export class ExpenseStorageService {
 
   notifyTotalExpenses() {
     this.expenseSource.next(this.getExpenses()?.length);
+  }
+
+  // Utilizando Observables
+  asObservable(): Observable<number> {
+    return this.expenseSource;
+  }
+
+// Utilizando Observables
+  calculateTotalExpenses(): Observable<number> {
+    const expenses = JSON.parse(localStorage.getItem(Constants.EXPENSES_KEY)!);
+    return expenses.reduce((total: number, expense: Expense) => {
+      return total + expense.cost;
+    }, 0);
   }
 }

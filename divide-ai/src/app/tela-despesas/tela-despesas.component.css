@@ -53,7 +53,7 @@ h4 {
   padding: 0px 10px 0px 10px;
 }
 
-.input-people  {
+#input-people  {
   background-color: var(--table) !important;
   border: solid 1px var(--primaryColor) !important;
   border-radius: 10px !important;
@@ -64,10 +64,12 @@ h4 {
 /* label color */
 .input-field label {
   color: var(--primaryColor);
+  padding-left: 10px;
 }
 /* label focus color */
 .input-field input:focus + label {
   color: var(--primaryColor);
+  margin: -10px;
 }
 /* label underline focus color */
 .input-field input:focus {

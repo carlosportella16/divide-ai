@@ -8,6 +8,8 @@
 
 # Node
 /node_modules
+/node_modules/*
+node_modules
 npm-debug.log
 yarn-error.log
 
@@ -29,6 +31,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
+/angular/*
 /.angular/cache
 .sass-cache/
 /connect.lock

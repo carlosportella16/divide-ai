@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SplitExpensesService } from 'src/app/services/splitexpenses.service';
+import { Shared } from 'src/util/shared';
 
 @Component({
   selector: 'app-result-component',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-component.component.css']
 })
 export class ResultComponentComponent implements OnInit {
+  value: number = 0;
+  constructor(private splitUpService: SplitExpensesService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
+    Shared.initializeWebStorage();
+    this.value = this.splitUpService.total;
   }
 
 }
