@@ -39,24 +39,31 @@ export class TelaCadastroComponent implements OnInit {
     // Salva expense
     this.expenseService
       .save(this.expense)
-      .then(() => {
-        // Emite mensagem
+      .subscribe(
+        (data:Expense) => {
+        this.expense = data;
+        // salvando no local storage
+        this.expenseServiceStorage.save(this.expense);
         this.isShowMessage = true;
         this.isSuccess = true;
+
+        //emite mensagem de sucesso
         this.message = 'Cadastro realizado com sucesso!';
         this.isSubmitted = true;
         this.expenses = this.expenseServiceStorage.getExpenses();
-      })
-      .catch((e) => {
-        this.isShowMessage = true;
-        this.isSuccess = false;
-        this.message = e;
-      })
-      .then(() => {
-        // Reseta Formulario
+
+        //reseta valores
         this.form.reset();
         this.expense = new Expense(0, '');
         this.expenseServiceStorage.notifyTotalExpenses();
-      });
+        },
+        (error) => {
+          //imprime mensagem de erro
+          this.isShowMessage = true;
+          this.isSuccess = false;
+          this.message = error;
+        }
+
+      );
   }
 }
