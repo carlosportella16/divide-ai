@@ -10,7 +10,7 @@ import { Shared } from 'src/util/shared';
   styleUrls: ['./total-expenses.component.css']
 })
 export class TotalExpensesComponent implements OnInit {
-
+  people!: number;
   value: any = 0;
   subscription: Subscription;
 

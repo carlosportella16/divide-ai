@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Shared } from 'src/util/shared';
 import { Expense } from '../model/expense';
@@ -16,7 +16,9 @@ export class TelaDespesasComponent implements OnInit {
 
   expense!: Expense;
   expenses!: Expense[];
-  @Input() people!: number;
+
+  people!: number;
+  @Output() splitUp: EventEmitter<number> = new EventEmitter();
 
   isSubmitted!: boolean;
   isShowMessage: boolean = false;
@@ -27,8 +29,6 @@ export class TelaDespesasComponent implements OnInit {
 
   constructor(
     private expenseServiceStorage: ExpenseStorageService,
-    private expenseService: ExpenseService,
-    private splitUpService: SplitExpensesService
   ) {}
 
   ngOnInit(): void {
@@ -36,8 +36,8 @@ export class TelaDespesasComponent implements OnInit {
     this.expenses = this.expenseServiceStorage.getExpenses();
   }
 
-  onSplitUp() {
-    
+  handleClick() {
+    this.splitUp.emit();
   }
 
   /**
