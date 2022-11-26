@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
+import { AppError } from 'src/util/app-error';
 import { Constants } from 'src/util/constants';
 import { ErrorUtil } from 'src/util/error-util';
 import { RoutesAPI } from 'src/util/routes-api';
@@ -23,18 +24,17 @@ export class ExpenseService {
     private httpClient: HttpClient
   ) {}
 
-  save(expense: Expense): Promise<Expense> {
-    const p = new Promise<Expense>((resolve, reject) => {
-      if (expense.cost <= 0) {
-        reject('O valor da despesa precisa ser positivo!');
-        return;
-      }
-      setTimeout(() => {
-        this.localStorage.save(expense);
-        resolve(expense);
-      }, 0);
-    });
-    return p;
+  save(expense: Expense): Observable<Expense> {
+    if(expense.cost <= 0) {
+      return throwError(
+        new AppError(
+          'O valor precisa ser maior que ZERO!'
+        )
+      );
+    }
+    return this.httpClient
+    .post<Expense>(this.URL, expense, this.httpOptions)
+    .pipe(catchError(ErrorUtil.handleError));
   }
 
   calculateTotalExpenses(): number {

@@ -1,19 +1,40 @@
 {
-  "posts": [
+  "expenses": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": "852",
+      "description": "sd",
+      "date": "2022-11-22T00:36:02.050Z",
+      "cost": 2323
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "299",
+      "description": "dsd",
+      "date": "2022-11-22T00:42:21.982Z",
+      "cost": 23
+    },
+    {
+      "id": "224",
+      "description": "sd",
+      "date": "2022-11-22T00:54:48.616Z",
+      "cost": 232
+    },
+    {
+      "id": "965",
+      "description": "sds",
+      "date": "2022-11-22T00:55:06.745Z",
+      "cost": 232
+    },
+    {
+      "id": "877",
+      "description": "asas",
+      "date": "2022-11-22T01:04:39.805Z",
+      "cost": 232
+    },
+    {
+      "id": "660",
+      "description": "hjhjk",
+      "date": "2022-11-22T01:15:26.381Z",
+      "cost": 2512
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

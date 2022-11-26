@@ -1,4 +1,5 @@
 {
   "/expenses": "/expenses",
-  "/expenses/:id": "/expenses/:id"
+  "/expenses/:id": "/expenses/:id",
+  "/expenses/:t": "/expenses?ttpe=:t"
 }

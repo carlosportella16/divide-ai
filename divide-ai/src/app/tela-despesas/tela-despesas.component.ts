@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Shared } from 'src/util/shared';
 import { Expense } from '../model/expense';
@@ -16,28 +16,28 @@ export class TelaDespesasComponent implements OnInit {
 
   expense!: Expense;
   expenses!: Expense[];
+
   people!: number;
+  @Output() splitUp: EventEmitter<number> = new EventEmitter();
 
   isSubmitted!: boolean;
   isShowMessage: boolean = false;
   isSuccess!: boolean;
   message!: string;
 
-  router!:string;
+  router!: string;
 
   constructor(
     private expenseServiceStorage: ExpenseStorageService,
-    private expenseService: ExpenseService,
-    private splitUpService: SplitExpensesService) {}
+  ) {}
 
   ngOnInit(): void {
     Shared.initializeWebStorage();
     this.expenses = this.expenseServiceStorage.getExpenses();
-    this.splitUpService.splitUpExpenses(this.people);
   }
 
-  onSplitUp(){
-    this.splitUpService.splitUpExpenses(this.people);
+  handleClick() {
+    this.splitUp.emit();
   }
 
   /**
@@ -46,7 +46,7 @@ export class TelaDespesasComponent implements OnInit {
    * @param expense
    */
 
-   onEdit(expense: Expense) {
+  onEdit(expense: Expense) {
     let clone = Expense.clone(expense);
     this.expense = clone;
   }
@@ -58,6 +58,7 @@ export class TelaDespesasComponent implements OnInit {
     if (!confirmation) {
       return;
     }
+
     let response: boolean = this.expenseServiceStorage.delete(e);
     this.isShowMessage = true;
     this.isSuccess = response;
@@ -69,4 +70,5 @@ export class TelaDespesasComponent implements OnInit {
     this.expenses = this.expenseServiceStorage.getExpenses();
     this.expenseServiceStorage.notifyTotalExpenses();
   }
+
 }
