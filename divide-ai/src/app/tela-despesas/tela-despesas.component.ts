@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 import { NgForm } from '@angular/forms';
 import { Shared } from 'src/util/shared';
 import { Expense } from '../model/expense';
-import { ExpenseService } from '../services/expense.service';
 import { SplitExpensesService } from '../services/splitexpenses.service';
 import { ExpenseStorageService } from '../services/expense-storage.service';
 
@@ -18,17 +17,19 @@ export class TelaDespesasComponent implements OnInit {
   expenses!: Expense[];
 
   people!: number;
-  @Output() splitUp: EventEmitter<number> = new EventEmitter();
+  total!: number;
 
   isSubmitted!: boolean;
   isShowMessage: boolean = false;
   isSuccess!: boolean;
   message!: string;
+  showResult: boolean = true;
 
   router!: string;
 
   constructor(
     private expenseServiceStorage: ExpenseStorageService,
+    private splitService: SplitExpensesService
   ) {}
 
   ngOnInit(): void {
@@ -36,8 +37,9 @@ export class TelaDespesasComponent implements OnInit {
     this.expenses = this.expenseServiceStorage.getExpenses();
   }
 
-  handleClick() {
-    this.splitUp.emit();
+  onSplitUp() {
+    this.total = this.splitService.splitUpExpenses(this.people);
+    this.showResult = false;
   }
 
   /**

@@ -14,7 +14,7 @@ export class TotalExpensesComponent implements OnInit {
   value: any = 0;
   subscription: Subscription;
 
-  constructor(private expenseStorageService: ExpenseStorageService, private expenseService: ExpenseService) {
+  constructor(private expenseStorageService: ExpenseStorageService) {
     this.subscription = this.expenseStorageService.asObservable().subscribe(
       (data) => {
         this.value = data;
@@ -27,7 +27,6 @@ export class TotalExpensesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    Shared.initializeWebStorage();
     this.value = this.expenseStorageService.calculateTotalExpenses();
   }
 

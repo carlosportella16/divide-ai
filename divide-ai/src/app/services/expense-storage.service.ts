@@ -45,7 +45,7 @@ export class ExpenseStorageService {
     return this.expenses;
   }
   notifyTotalExpenses() {
-    this.expenseSource.next(this.getExpenses()?.length);
+    this.expenseSource.next(this.calculateTotalExpenses())
   }
 
   // Utilizando Observables
@@ -53,11 +53,11 @@ export class ExpenseStorageService {
     return this.expenseSource;
   }
 
-// Utilizando Observables
-  calculateTotalExpenses(): Observable<number> {
+  // Utilizando Observables
+  calculateTotalExpenses(): number {
     const expenses = JSON.parse(localStorage.getItem(Constants.EXPENSES_KEY)!);
     return expenses.reduce((total: number, expense: Expense) => {
       return total + expense.cost;
-    },0);
+    }, 0);
   }
 }

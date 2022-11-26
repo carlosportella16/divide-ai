@@ -37,12 +37,6 @@ export class ExpenseService {
     .pipe(catchError(ErrorUtil.handleError));
   }
 
-  calculateTotalExpenses(): number {
-    const expenses = JSON.parse(localStorage.getItem(Constants.EXPENSES_KEY)!);
-    return expenses.reduce((total: number, expense: Expense) => {
-      return total + expense.cost;
-    }, 0);
-  }
 
   getExpenseById(id: string): Promise<Expense[] | undefined> {
     return this.httpClient.get<Expense[]>(`${this.URL}/${id}`).toPromise();
