@@ -2,27 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
-import { TelaAboutComponent } from './tela-about/tela-about.component';
+import { LandPageComponent } from './land-page/land-page.component';
+import { AboutComponent } from './about/about.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
-import { TelaDespesasComponent } from './tela-despesas/tela-despesas.component';
+import { ExpenseRegisterComponent } from './expense-register/expense-register.component';
+import { ExpensesComponent } from './expenses/expenses.component';
 import { NgxMaskModule } from 'ngx-mask';
-import { ResultComponentComponent } from './tela-despesas/result-component/result-component.component';
+import { ResultComponentComponent } from './expenses/result-component/result-component.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { TotalExpensesComponent } from './tela-despesas/total-expenses/total-expenses.component';
+import { TotalExpensesComponent } from './expenses/total-expenses/total-expenses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TelaInicioComponent,
-    TelaAboutComponent,
+    LandPageComponent,
+    AboutComponent,
     MenuComponent,
     FooterComponent,
-    TelaCadastroComponent,
-    TelaDespesasComponent,
+    ExpenseRegisterComponent,
+    ExpensesComponent,
     ResultComponentComponent,
     TotalExpensesComponent,
   ],

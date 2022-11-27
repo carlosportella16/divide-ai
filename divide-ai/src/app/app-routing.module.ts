@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TelaAboutComponent } from './tela-about/tela-about.component';
-import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
-import { TelaDespesasComponent } from './tela-despesas/tela-despesas.component';
-import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
-import { ResultComponentComponent } from './tela-despesas/result-component/result-component.component';
+import { AboutComponent } from './about/about.component';
+import { ExpenseRegisterComponent } from './expense-register/expense-register.component';
+import { ExpensesComponent } from './expenses/expenses.component';
+import { LandPageComponent } from './land-page/land-page.component';
+import { ResultComponentComponent } from './expenses/result-component/result-component.component';
 
 const routes: Routes = [
-  {path: 'inicio', component: TelaInicioComponent},
-  { path: 'adicionarDespesa', component: TelaCadastroComponent },
+  {path: 'inicio', component: LandPageComponent},
+  { path: 'adicionarDespesa', component: ExpenseRegisterComponent },
   {
-    path: 'listaDespesas', component: TelaDespesasComponent,
+    path: 'listaDespesas', component: ExpensesComponent,
     children: [
       {
         path: 'resultado',
@@ -18,7 +18,7 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'about', component: TelaAboutComponent },
+  { path: 'about', component: AboutComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
 ];
 

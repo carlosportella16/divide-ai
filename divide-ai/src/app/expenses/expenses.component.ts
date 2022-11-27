@@ -6,11 +6,11 @@ import { SplitExpensesService } from '../services/splitexpenses.service';
 import { ExpenseStorageService } from '../services/expense-storage.service';
 
 @Component({
-  selector: 'app-tela-despesas',
-  templateUrl: './tela-despesas.component.html',
-  styleUrls: ['./tela-despesas.component.css'],
+  selector: 'app-expenses',
+  templateUrl: './expenses.component.html',
+  styleUrls: ['./expenses.component.css'],
 })
-export class TelaDespesasComponent implements OnInit {
+export class ExpensesComponent implements OnInit {
   @ViewChild('formP') formP!: NgForm;
 
   expense!: Expense;

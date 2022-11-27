@@ -10,11 +10,11 @@ import { ExpenseService } from '../services/expense.service';
 import { ExpenseStorageService } from '../services/expense-storage.service';
 
 @Component({
-  selector: 'app-tela-cadastro',
-  templateUrl: './tela-cadastro.component.html',
-  styleUrls: ['./tela-cadastro.component.css'],
+  selector: 'app-expense-register',
+  templateUrl: './expense-register.component.html',
+  styleUrls: ['./expense-register.component.css'],
 })
-export class TelaCadastroComponent implements OnInit {
+export class ExpenseRegisterComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
 
   expense!: Expense;

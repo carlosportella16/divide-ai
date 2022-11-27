@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TelaCadastroComponent } from './tela-cadastro.component';
+import { LandPageComponent } from './land-page.component';
 
-describe('TelaCadastroComponent', () => {
-  let component: TelaCadastroComponent;
-  let fixture: ComponentFixture<TelaCadastroComponent>;
+describe('LandPageComponent', () => {
+  let component: LandPageComponent;
+  let fixture: ComponentFixture<LandPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TelaCadastroComponent ]
+      declarations: [ LandPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TelaCadastroComponent);
+    fixture = TestBed.createComponent(LandPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
