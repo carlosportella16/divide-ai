@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href=/divide-ai-app/",
-    "ghpages": "angular-cli-ghpages --dir=dist/divide-ai-app",
+    "build": "ng build --base-href=/divide-ai/",
+    "ghpages": "angular-cli-ghpages --dir=dist/divide-ai",
     "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
