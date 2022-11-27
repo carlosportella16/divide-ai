@@ -1,10 +1,10 @@
 {
   "expenses": [
     {
-      "id": "1",
-      "description": "sd",
-      "date": "2022-11-22T00:36:02.050Z",
-      "cost": 2323
+      "id": "420",
+      "description": "Internet",
+      "date": "2022-11-27T18:57:08.468Z",
+      "cost": 200
     }
   ]
 }

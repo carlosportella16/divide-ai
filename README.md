@@ -4,12 +4,13 @@ Este projeto tem como objetivo implementar progressivamente uma aplicação web 
 
 O frontend da aplicação será desenvolvido com Angular e o backend simulado pela implementação de uma API Fake, usando o JSON Server.
 
-# Endereço de Deploy - GitHub Pages
+## Endereço de Deploy - GitHub Pages
+Você pode acessar o projeto através deste [desse link](https://carlosportella16.github.io/divide-ai/inicio). 
 
-# Protótipo
+## Protótipo
 Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/bq4ZNSyDEdcDzWxoQawcXn/Divide-ai?node-id=0%3A1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
-# Checklist
+## Checklist
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
 - [x] Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro)
 - [x] Apresentar as telas com layout responsivo usando ou não algum framework CSS.
@@ -27,4 +28,14 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 - [x] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [x] Build e deploy da aplicação.
+
+## Manual de execução
+- Clonar o repositório com `git clone`
+- Fazer checkout no branch `develop` que contém as modificações mais recentes
+- Abrir o projeto no editor Visual Studio Code (VS Code)
+- Abrir um terminal pelo VSCode e executar a API Fake (JSON Server) via o seguinte comando: 
+  - Comando: `npm run json-server --watch db.json --routes routes.json`
+  - O comando deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json` e `routes.json`.
+- Abrir um novo terminal pelo VSCode e então executar o projeto Angular
+  - Comando: `ng s`

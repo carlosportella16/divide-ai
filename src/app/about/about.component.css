@@ -4,6 +4,13 @@
   border: solid 1px var(--primaryColor);
 }
 
+.card-image {
+  height: 150px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
   font-size: 23px;
   font-weight: 700;
