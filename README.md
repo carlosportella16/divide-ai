@@ -5,6 +5,7 @@ Este projeto tem como objetivo implementar progressivamente uma aplicação web 
 O frontend da aplicação será desenvolvido com Angular e o backend simulado pela implementação de uma API Fake, usando o JSON Server.
 
 # Endereço de Deploy - GitHub Pages
+Você pode acessar o projeto através deste [desse link](https://carlosportella16.github.io/divide-ai/inicio). 
 
 # Protótipo
 Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/bq4ZNSyDEdcDzWxoQawcXn/Divide-ai?node-id=0%3A1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
@@ -27,4 +28,4 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 - [x] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [x] Build e deploy da aplicação.
