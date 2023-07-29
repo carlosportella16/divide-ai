@@ -1,5 +1,51 @@
 # divide-ai
 
+This project aims to progressively implement a web application that will manage shared expenses in a residence. Users will be able to register their expenses (e.g., water, electricity, groceries) along with the expense amount, a brief description, and the number of residents. The application will calculate the total expense and divide it among the residents, generating the amount to be paid by each member of the household.
+
+The frontend of the application will be developed using Angular, and the backend will be simulated using a Fake API implementation with JSON Server.
+
+## Deployment Address - GitHub Pages
+You can access the project through [this link](https://carlosportella16.github.io/divide-ai/inicio).
+
+## Prototype
+You can view the project's layout through [this link](https://www.figma.com/file/bq4ZNSyDEdcDzWxoQawcXn/Divide-ai?node-id=0%3A1). A [Figma](https://figma.com) account is required to access it.
+
+## Checklist
+- [x] Create the GitHub repository with the Gitflow structure, i.e., main and develop branches.
+- [x] Use components from a CSS framework (Bootstrap, Materialize, or others).
+- [x] Present responsive layouts for the screens, using CSS frameworks or not.
+- [x] Build web pages with the concept of components.
+- [x] Create the application layout using components, meaning the header and footer should be components.
+- [x] Use at least two types of data binding (Interpolation, Property Binding, Event Binding, and Two Way Data Binding).
+- [x] Pass data through component hierarchy using @Input or @Output.
+- [x] Map components to routes in the routing module.
+- [x] Enable navigation between pages using routes.
+- [x] Pass data between components representing different screens via route parameters.
+- [x] Validate form fields with REGEX and display errors.
+- [x] Disable the submit button while the form is invalid.
+- [x] Make API requests and handle responses with Promises or Observables.
+- [x] Register an entity using an API (JSON Server or Firebase).
+- [x] Display a list of data using the ngFor structural directive.
+- [x] Use the ngIf directive.
+- [x] Format data presentation using Pipes.
+- [x] Build and deploy the application.
+
+## Execution Manual
+- Clone the repository using `git clone`.
+- Checkout the `develop` branch, which contains the most recent changes.
+- Open the project in Visual Studio Code (VS Code).
+- Open a terminal in VS Code and run the Fake API (JSON Server) using the following command:
+  - Command: `npm run json-server --watch db.json --routes routes.json`
+  - The command should be executed in the root directory of the project, where the `db.json` and `routes.json` files are located.
+- Open a new terminal in VS Code and then run the Angular project:
+  - Command: `ng s`
+
+
+
+# Portuguese Version / Versão em português
+
+# divide-ai
+
 Este projeto tem como objetivo implementar progressivamente uma aplicação web que efetuará o controle de despesas em comum de residência, sendo que o usuário poderá cadastrar a despesa que efetuou o pagamento (água, luz, supermercado, etc.), o valor da despesa, uma breve discriminação e a quantidade de moradores, sendo que ao final, a aplicação efetuará a soma e divisão, gerando o valor a ser pago por cada membro da residência.
 
 O frontend da aplicação será desenvolvido com Angular e o backend simulado pela implementação de uma API Fake, usando o JSON Server.
